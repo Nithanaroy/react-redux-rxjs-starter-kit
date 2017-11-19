@@ -1,0 +1,25 @@
+{
+  "name": "fixtures_server",
+  "version": "1.0.0",
+  "description": "A mock backend server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"TODO\"",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "fixtures",
+    "server",
+    "mock"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^16.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "engines": {
+    "node": ">=8.2.1"
+  }
+}
