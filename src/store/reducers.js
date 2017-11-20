@@ -15,6 +15,15 @@ export const person = ( state = {}, action ) => {
   }
 };
 
+export const people = ( state = [], action ) => {
+  switch( action.type ){
+  case C.REPLACE_PEOPLE:
+    return action.payload;
+  default:
+    return state;
+  }
+};
+
 export const loading = ( state = false, action ) => {
   switch( action.type ){
   case C.SEARCH_ENTITIES_LOADING :
@@ -53,5 +62,6 @@ export default combineReducers({
   person,
   errors,
   loading,
-  searchResults
+  searchResults,
+  people
 });

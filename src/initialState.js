@@ -21,5 +21,6 @@ export default {
     "office": "The Palace ",
     "pictureUrl": "",
     "extension": 83076
-  }
+  },
+  "people": []
 };

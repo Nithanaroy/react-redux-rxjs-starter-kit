@@ -21,13 +21,12 @@ class Search extends Component{
   render () {
     let { searchResults } = this.props;
     return (
-      <div className="uk-navbar-right">
-        <div>
-          <a className="uk-navbar-toggle" data-uk-icon="icon: search" href="#"></a>
-          <div className="uk-drop" data-uk-drop="mode: click; pos: left-center; offset: 0">
-            <form className="uk-search uk-search-navbar uk-width-1-1">
-              <input className="uk-input uk-form-width-large uk-search-input" type="search" value={this.state.query} onChange={this.searchEntities} placeholder="How to create a histogram report?" />
-            </form>
+      <div className="search">
+        <div className="uk-margin">
+          <div className="uk-inline">
+            <span className="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></span>
+            <input className="uk-input uk-form-width-large" type="text" autoFocus
+              value={this.state.query} onChange={this.searchEntities} />
           </div>
         </div>
         {searchResults.length > 0

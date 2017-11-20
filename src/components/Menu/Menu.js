@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Search from "../Search/SearchContainer";
 import "./Menu.less";
 
 const Menu = () =>
@@ -11,10 +10,10 @@ const Menu = () =>
 
       <ul className="uk-navbar-nav">
         <li className="uk-active"><Link to="/home">Home</Link></li>
-        <li><Link to="/about">Explore</Link></li>
+        <li><Link to="/explore">Explore</Link></li>
+        <li><Link to="/about">About</Link></li>
       </ul>
     </div>
-    <Search />
   </nav>;
 
 export default Menu;

@@ -5,6 +5,8 @@ const { inspect } = require( "util" );
 const Hapi = require( "hapi" );
 const peopleData = require( "./data/people.json" );
 
+const DEFAULT_PAGE_SIZE = 10;
+
 // Create a server with a host and port
 const server = new Hapi.Server();
 server.connection({
@@ -31,6 +33,21 @@ server.route({
     const searchTerm = request.params.query.trim();
     return reply({
       "result": peopleData.filter( p => p.name.indexOf( searchTerm ) >= 0 ),
+      "errors": [],
+      "message": ""
+    });
+  }
+});
+
+server.route({
+  "method": "GET",
+  "path": "/api/v1/person",
+  "handler": function ( request, reply ) {
+    const { limit, skip } = { ...request.params };
+    const startIndex = skip || 0;
+    const endIndex = startIndex + ( limit || DEFAULT_PAGE_SIZE );
+    return reply({
+      "result": peopleData.slice( startIndex, endIndex ),
       "errors": [],
       "message": ""
     });

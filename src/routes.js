@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import NotFound from "./components/404";
 import Errors from "./components/Errors/ErrorsContainer";
 import Home from "./components/Home/HomeContainer";
+import List from "./components/List/ListContainer";
 
 const routes = <Router>
   <div>
@@ -12,6 +13,8 @@ const routes = <Router>
       <Errors />
       <Switch>
         <Route exact path="/" component={Home}/>
+        <Route exact path="/home" component={Home}/>
+        <Route exact path="/explore" component={List}/>
         <Route component={NotFound}/>
       </Switch>
     </div>
